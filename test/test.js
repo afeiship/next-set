@@ -7,7 +7,7 @@ describe('next-treemap', function () {
   it('next-set initial', function () {
     var s1 = new nx.Set([1,2,1]);
 
-    assert.equal(s1.length, 2);
+    assert.equal(s1.size, 2);
     assert.deepEqual(s1.toArray(), [1,2]);
   });
 
@@ -25,7 +25,7 @@ describe('next-treemap', function () {
     s1.add(5);
     s1.add(6);
 
-    assert.equal(s1.length, 4);
+    assert.equal(s1.size, 4);
     assert.deepEqual(s1.toArray(), [1,2,5,6]);
   });
 
@@ -33,7 +33,7 @@ describe('next-treemap', function () {
     var s1 = new nx.Set([1,2,3]);
     s1.addAll([2,3,4]);
 
-    assert.equal(s1.length, 4);
+    assert.equal(s1.size, 4);
     assert.deepEqual(s1.toArray(), [1,2,3,4]);
   });
 
@@ -41,7 +41,7 @@ describe('next-treemap', function () {
     var s1 = new nx.Set([1,2,3,2]);
     s1.remove(2);
 
-    assert.equal(s1.length, 2);
+    assert.equal(s1.size, 2);
     assert.deepEqual(s1.toArray(), [1,3]);
   });
 
@@ -50,7 +50,7 @@ describe('next-treemap', function () {
     var s1 = new nx.Set([1,2,3,2]);
 
     s1.removeAll([1,2]);
-    assert.equal(s1.length, 1);
+    assert.equal(s1.size, 1);
     assert.deepEqual(s1.toArray(), [ 3 ]);
   });
 

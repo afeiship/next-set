@@ -8,7 +8,7 @@
 
   var NxSet = nx.declare('nx.Set', {
     properties: {
-      length: {
+      size: {
         get: function () {
           return this.elements.length;
         }
