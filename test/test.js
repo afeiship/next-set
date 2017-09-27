@@ -37,19 +37,19 @@ describe('next-treemap', function () {
     assert.deepEqual(s1.toArray(), [1,2,3,4]);
   });
 
-  it('next-set remove', function () {
+  it('next-set delete', function () {
     var s1 = new nx.Set([1,2,3,2]);
-    s1.remove(2);
+    s1.delete(2);
 
     assert.equal(s1.size, 2);
     assert.deepEqual(s1.toArray(), [1,3]);
   });
 
 
-  it('next-set removeAll', function () {
+  it('next-set deleteAll', function () {
     var s1 = new nx.Set([1,2,3,2]);
 
-    s1.removeAll([1,2]);
+    s1.deleteAll([1,2]);
     assert.equal(s1.size, 1);
     assert.deepEqual(s1.toArray(), [ 3 ]);
   });

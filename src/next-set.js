@@ -29,10 +29,10 @@
         var result = this.elements.concat(inItems);
         this.elements = nx.unique(result);
       },
-      remove: function (inValue) {
+      delete: function (inValue) {
         return nx.remove(this.elements, [inValue]);
       },
-      removeAll: function (inItems) {
+      deleteAll: function (inItems) {
         return nx.remove(this.elements, inItems);
       },
       clear: function () {
