@@ -4,6 +4,7 @@
   var nx = global.nx || require('next-js-core2');
   var _ ;
   _ = nx.remove || require('next-remove');
+  _ = nx.unique || require('next-unique');
 
   var NxSet = nx.declare('nx.Set', {
     properties:{
@@ -15,7 +16,7 @@
     },
     methods:{
       init: function(inArray){
-        this.elements = inArray || [];
+        this.elements = nx.unique(inArray) || [];
       },
       add: function(inValue){
         if( this.has(inValue) ){

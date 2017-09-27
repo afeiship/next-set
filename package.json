@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "next-js-core2": "github:afeiship/next-js-core2",
-    "next-remove": "github:afeiship/next-remove"
+    "next-remove": "github:afeiship/next-remove",
+    "next-unique": "github:afeiship/next-unique"
   }
 }
