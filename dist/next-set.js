@@ -2,7 +2,7 @@
 
   var global = global || this || self || window;
   var nx = global.nx || require('next-js-core2');
-  var _;
+  var _ ;
   _ = nx.remove || require('next-remove');
   _ = nx.unique || require('next-unique');
 
