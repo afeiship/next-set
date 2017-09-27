@@ -8,7 +8,7 @@
 
   var NxSet = nx.declare('nx.Set', {
     properties: {
-      size: {
+      length: {
         get: function () {
           return this.elements.length;
         }
@@ -16,6 +16,7 @@
     },
     methods: {
       init: function (inArray) {
+        var self = this;
         this.elements = nx.unique(inArray) || [];
       },
       add: function (inValue) {
