@@ -1,6 +1,7 @@
 {
   "name": "next-set",
-  "description": "Data set for next.",
+  "version": "0.0.1",
+  "description": "Data set for next",
   "main": "dist/next-set.js",
   "authors": [
     "afei"
@@ -20,7 +21,7 @@
     "test",
     "tests",
     "src",
-    "gulp",
+    "build",
     "gulpfile.js"
   ]
 }

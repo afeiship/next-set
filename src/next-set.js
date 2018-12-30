@@ -1,54 +1,36 @@
-(function () {
-
-  var global = global || this || self || window;
+(function() {
+  var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
-  var _ ;
-  _ = nx.remove || require('next-remove');
-  _ = nx.unique || require('next-unique');
+  var nxMapMap = nx.mapMap || require('next-map-map');
 
   var NxSet = nx.declare('nx.Set', {
-    properties: {
-      size: {
-        get: function () {
-          return this.elements.length;
-        }
-      }
-    },
     methods: {
-      init: function (inArray) {
-        var self = this;
-        this.elements = nx.unique(inArray) || [];
+      init: function(inItems) {
+        this.map = this._genMap(inItems);
       },
-      add: function (inValue) {
+      has: function(inValue) {
+        return inValue in this.map;
+      },
+      add: function(inValue) {
+        this.map[inValue] = inValue;
+      },
+      delete: function(inValue) {
         if (this.has(inValue)) {
-          this.remove(inValue);
-        }
-        this.elements.push(inValue);
-      },
-      addAll: function (inItems) {
-        var result = this.elements.concat(inItems);
-        this.elements = nx.unique(result);
-      },
-      delete: function (inValue) {
-        return nx.remove(this.elements, [inValue]);
-      },
-      deleteAll: function (inItems) {
-        return nx.remove(this.elements, inItems);
-      },
-      clear: function () {
-        this.elements = [];
-      },
-      has: function (inValue) {
-        for (var index = 0; index < this.elements.length; index++) {
-          var element = this.elements[index];
-          if (inValue === element) {
-            return true;
-          }
+          delete this.map[inValue];
+          return true;
         }
         return false;
       },
-      toArray: function () {
-        return this.elements;
+      clear: function() {
+        this.map = {};
+      },
+      _genMap: function(inItems) {
+        return nxMapMap(inItems, function(_, value) {
+          return {
+            key: value,
+            value: value
+          };
+        });
       }
     }
   });
@@ -56,5 +38,4 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = NxSet;
   }
-
-}());
+})();
