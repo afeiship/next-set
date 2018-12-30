@@ -1,21 +1,56 @@
-(function () {
-  var assert = require('assert');
-  var nx = require('next-js-core2');
-  var NxSet = require('../src/next-set');
+var nx = require('next-js-core2');
+var NxSet = require('../src/next-set');
 
-  describe('NxSet.methods', function () {
-    it('json/urlencoded', function () {
-      var data = {
-        key: 1,
-        value: 2
-      };
-      // console.log(rs1, rs2);
+test('NxSet.methods', function() {
+  // var s1 = new NxSet([1, 2, 3, 3, 4]);
 
-      // assert.equal(rs1, '{"key":1,"value":2}');
-      // assert.equal(rs2, 'key=1&value=2');
+  var colors = [
+    'navy',
+    'olive',
+    'orange',
+    'silver',
+    'white',
+    'gold',
+    'lime',
+    'fuchsia',
+    'aqua',
+    'green',
+    'gray',
+    'red',
+    'blue',
+    'pink',
+    'purple',
+    'yellow',
+    'maroon',
+    'black',
+    'azure',
+    'beige',
+    'brown',
+    'cyan',
+    'darkblue',
+    'darkcyan',
+    'darkgrey',
+    'darkgreen',
+    'darkkhaki',
+    'darkmagenta',
+    'darkolivegreen',
+    'darkorange',
+    'darkorchid',
+    'darkred',
+    'darksalmon',
+    'darkviolet',
+    'indigo',
+    'khaki',
+    'lightblue',
+    'lightcyan',
+    'lightgreen',
+    'lightgrey',
+    'lightpink',
+    'lightyellow',
+    'magenta',
+    'violet'
+  ];
 
-    });
-  });
-
-
-}());
+  var s1 = new Set(colors);
+  console.log(s1);
+});
